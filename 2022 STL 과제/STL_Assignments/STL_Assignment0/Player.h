@@ -7,7 +7,7 @@ class Player
 {
 	std::string name;
 	int score;
-	int id;
+	int id = 0;
 	size_t num;
 	char* p;
 
@@ -18,13 +18,11 @@ public:
 	Player(const Player& other);
 	Player& operator=(const Player& other);
 
-	Player(Player&& other) noexcept;
-	Player& operator=(Player&& other) noexcept;
-
 	void write(std::ostream& os);
 	void read(std::istream& is);
-	int getName() const;
+	std::string getName() const;
 	int getId() const;
 	int getScore() const;
+	size_t getNum() const;
 	void print() const;
 };
